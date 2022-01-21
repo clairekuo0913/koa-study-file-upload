@@ -51,7 +51,6 @@ app.use(koa_body_1.default({
     multipart: true,
     encoding: 'gzip',
     formidable: {
-        //   uploadDir:path.join(__dirname,'static/upload/'), // 设置文件上传目录
         keepExtensions: true,
         maxFieldsSize: 15 * 1024 * 1024
     }
@@ -68,7 +67,7 @@ router.get('/', function (ctx) { return __awaiter(void 0, void 0, void 0, functi
 }); });
 // Post: upload
 var uploadUrl = "http://localhost:3000/static/upload";
-router.post('/upload', function (ctx) {
+router.post('/upload', koa_body_1.default(), function (ctx) {
     var file = ctx.request.files.file;
     console.log(file);
     var fileReader = fs_1.default.createReadStream(file.path);
