@@ -16,5 +16,9 @@
   "bugs": {
     "url": "https://github.com/clairekuo0913/koa-study-file-upload/issues"
   },
-  "homepage": "https://github.com/clairekuo0913/koa-study-file-upload#readme"
+  "homepage": "https://github.com/clairekuo0913/koa-study-file-upload#readme",
+  "devDependencies": {
+    "koa": "^2.13.4",
+    "path": "^0.12.7"
+  }
 }
