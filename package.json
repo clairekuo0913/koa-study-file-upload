@@ -4,7 +4,11 @@
   "description": "Koa study - uploading no less than 10 MB file to the server",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:build": "tsc -w",
+    "start:run": "nodemon ./app/dist/index.js",
+    "start": "concurrently npm:start:*"
+
   },
   "repository": {
     "type": "git",
@@ -21,6 +25,7 @@
     "@types/busboy": "^1.3.0",
     "@types/koa-router": "^7.4.4",
     "@types/koa-static": "^4.0.2",
+    "concurrently": "^7.0.0",
     "fs": "^0.0.1-security",
     "koa": "^2.13.4",
     "path": "^0.12.7"

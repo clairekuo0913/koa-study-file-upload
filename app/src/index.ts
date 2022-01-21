@@ -13,7 +13,7 @@ app.use(koaBody({
     formidable:{
     //   uploadDir:path.join(__dirname,'static/upload/'), // 设置文件上传目录
       keepExtensions: true,    // keep file suffix
-      maxFieldsSize:10 * 1024 * 1024
+      maxFieldsSize:15 * 1024 * 1024
     }
   }));
   
@@ -28,7 +28,7 @@ router.get('/', async (ctx: any) => {
 
 // Post: upload
 const uploadUrl = "http://localhost:3000/static/upload"
-router.post('/upload', koaBody, (ctx: any) => {
+router.post('/upload', (ctx: any) => {
     const file = ctx.request.files.file;
     console.log(file);
     const fileReader = fs.createReadStream(file.path);
