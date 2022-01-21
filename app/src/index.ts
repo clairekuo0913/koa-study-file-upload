@@ -28,7 +28,7 @@ router.get('/', async (ctx: any) => {
 
 // Post: upload
 const uploadUrl = "http://localhost:3000/static/upload"
-router.post('/upload', (ctx: any) => {
+router.post('/upload', koaBody, (ctx: any) => {
     const file = ctx.request.files.file;
     console.log(file);
     const fileReader = fs.createReadStream(file.path);
