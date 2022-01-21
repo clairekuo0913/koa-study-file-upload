@@ -104,4 +104,4 @@ dist
 .tern-port
 
 # uploaded file
-./app/dist/static/upload
+./app/dist/static/upload/
