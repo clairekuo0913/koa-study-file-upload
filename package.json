@@ -1,0 +1,20 @@
+{
+  "name": "koa-study-file-upload",
+  "version": "1.0.0",
+  "description": "Koa study - uploading no less than 10 MB file to the server",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/clairekuo0913/koa-study-file-upload.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/clairekuo0913/koa-study-file-upload/issues"
+  },
+  "homepage": "https://github.com/clairekuo0913/koa-study-file-upload#readme"
+}
