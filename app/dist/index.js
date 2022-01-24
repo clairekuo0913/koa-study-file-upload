@@ -52,7 +52,7 @@ app.use(koa_body_1.default({
     encoding: 'gzip',
     formidable: {
         keepExtensions: true,
-        maxFieldsSize: 15 * 1024 * 1024
+        maxFileSize: 200 * 1024 * 1024 // default max file size
     }
 }));
 // Get

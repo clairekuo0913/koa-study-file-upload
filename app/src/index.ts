@@ -8,11 +8,11 @@ import fs from 'fs';
 const app = new Koa();
 const router = new Router();
 app.use(koaBody({
-    multipart:true, // support file upload
-    encoding:'gzip',
-    formidable:{
-      keepExtensions: true,    // keep file suffix
-      maxFieldsSize:15 * 1024 * 1024
+    multipart:true,                 // support file upload
+    encoding:'gzip',                // html encoding
+    formidable:{                    // using formidable options
+      keepExtensions: true,         // keep file suffix
+      maxFileSize: 200*1024*1024    // default max file size
     }
   }));
   
@@ -27,8 +27,8 @@ router.get('/', async (ctx: any) => {
 
 // Post: upload
 const uploadUrl = "http://localhost:3000/static/upload"
-router.post('/upload',koaBody(), (ctx: any) => {
-    const file = ctx.request.files.file;
+router.post('/upload',koaBody(), (ctx: any) => {    // cannot use Context object as types of ctx, becuase ctx.request.files method is extended by the koa-body package.
+    const file = ctx.request.files.file; 
     console.log(file);
     const fileReader = fs.createReadStream(file.path);
     console.log(fileReader);
